@@ -69,14 +69,14 @@ class ConsoleUI(UI):
 
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(
-        prog="deepseek-agent",
+        prog="pi_agent",
         description="通用 AI 智能体，基于 DeepSeek API（支持工具调用）。",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""示例：
-  deepseek-agent "帮我看看当前目录有哪些文件"
-  deepseek-agent -m pro "写一个 Python 冒泡排序并测试"
-  deepseek-agent -i                     # 交互模式
-  deepseek-agent --models               # 查看可用模型
+  pi_agent "帮我看看当前目录有哪些文件"
+  pi_agent -m pro "写一个 Python 冒泡排序并测试"
+  pi_agent -i                     # 交互模式
+  pi_agent --models               # 查看可用模型
 """,
     )
     p.add_argument("task", nargs="*", help="要执行的任务（可多段，会拼接）")
@@ -100,7 +100,7 @@ def build_parser() -> argparse.ArgumentParser:
     p.add_argument("--api-key", default=None, help="API Key（也可用环境变量 DEEPSEEK_API_KEY）")
     p.add_argument("--base-url", default=None, help="API 地址（默认 https://api.deepseek.com）")
     p.add_argument("--models", action="store_true", help="打印可用模型并退出")
-    p.add_argument("--version", action="version", version=f"deepseek-agent {__version__}")
+    p.add_argument("--version", action="version", version=f"pi_agent {__version__}")
     return p
 
 
@@ -168,7 +168,7 @@ def main(argv=None) -> int:
         if not sys.stdin.isatty():
             task = sys.stdin.read().strip()
         if not task:
-            print("请提供任务：deepseek-agent \"你的任务\"，或使用 -i 进入交互模式。",
+            print("请提供任务：pi_agent \"你的任务\"，或使用 -i 进入交互模式。",
                   file=sys.stderr)
             return 2
 

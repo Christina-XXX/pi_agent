@@ -1,4 +1,4 @@
-# DeepSeek Agent
+# pi_agent
 
 一个基于 [DeepSeek API](https://api-docs.deepseek.com/zh-cn/) 的**通用 AI 智能体**，开箱即用、零第三方依赖，支持工具调用（读写文件、执行命令、搜索、抓取网页），并可根据任务自动选择模型。
 
@@ -15,8 +15,8 @@
 
 ```bash
 # 1. 克隆仓库
-git clone <你的仓库地址>
-cd deepseek-agent
+git clone https://github.com/Christina-XXX/pi_agent.git
+cd pi_agent
 
 # 2. 配置 API Key（二选一）
 cp .env.example .env      # 然后编辑 .env 填入你的 key
@@ -92,24 +92,22 @@ DeepSeek 当前模型（详见[模型与价格](https://api-docs.deepseek.com/zh
 2. 其他成员 `git clone` 后，各自用**自己的** API Key（`cp .env.example .env`）。
 3. 大家一起改代码、加工具，通过 Git 分支 + Pull Request 协作。
 
-## 🌍 发布到 GitHub
+## 🌍 GitHub 仓库
 
-本机已 `git init` 并完成首次提交。推送到 GitHub：
+已发布到：<https://github.com/Christina-XXX/pi_agent>
+
+如需在其他机器上重新关联远程仓库：
 
 ```bash
-# 1) 在 github.com 手动新建一个空仓库（如 deepseek-agent，不要勾选 README/.gitignore）
-# 2) 配置身份并推送
-git remote add origin https://github.com/<你的用户名>/deepseek-agent.git
+git remote add origin https://github.com/Christina-XXX/pi_agent.git
 git branch -M main
 git push -u origin main
 ```
 
-> 提示：如本机访问 GitHub 不稳定，可使用 `https://ghproxy.com/` 等镜像或科学上网；也可以先在网页上创建仓库后，用 GitHub Desktop 推送。
-
 ## 📁 项目结构
 
 ```
-deepseek-agent/
+pi_agent/
 ├── agent.py              # 入口
 ├── deepseek_agent/       # 核心包
 │   ├── cli.py            # 命令行

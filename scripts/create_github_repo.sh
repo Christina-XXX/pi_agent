@@ -3,7 +3,7 @@
 # 用法：./scripts/create_github_repo.sh <仓库名> [--private]
 set -euo pipefail
 
-NAME="${1:-deepseek-agent}"
+NAME="${1:-pi_agent}"
 VISIBILITY="--public"
 if [[ "${2:-}" == "--private" ]]; then
   VISIBILITY="--private"
